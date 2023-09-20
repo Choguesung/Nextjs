@@ -21,7 +21,7 @@ export default function Comment(props) {
                     data.map((a, i) =>
                         <p key={i}>{a.content}</p>
                     )
-                    : '댓글없음'
+                    : '댓글없음1'
             }
             <input onChange={(e) => { setComment(e.target.value) }} />
             <button onClick={() => {
