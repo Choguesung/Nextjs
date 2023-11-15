@@ -1,13 +1,14 @@
-import { connectDB } from '../database.js'
-import ListItem from './ListItem.js'
 
-export default async function List() {
-  const db = (await connectDB).db('forum')
-  let result = await db.collection('post').find().toArray()
-
-  return (
-    <div className="list-bg">
-      <ListItem result={result} />
-    </div>
-  )
-}
+export default function List() {
+    let 상품 = ['Tomatoes', 'Pasta', 'Coconut']
+    return (
+        상품.map((a, i)=>{
+            return (
+              <div className="food" key={i}>
+                <img src={`/food${i}.png`}/>
+                <h4>{a} $40</h4>
+              </div>
+            )
+        }) 
+    )
+  } 
