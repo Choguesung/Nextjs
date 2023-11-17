@@ -1,6 +1,8 @@
 import { connectDB } from "@/util/database.js"
 import ListItem from "./ListItem";
 
+export const dynamic = 'force-dynamic' // 렌더링 전략 수정
+
 export default async function List() {
   let db = (await connectDB).db('forum');
   let result = await db.collection('post').find().toArray();
